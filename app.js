@@ -117,5 +117,9 @@ app.use((err, req, res, next) => {
   });
 });
 
+app.listen(() => {
+  console.log(`Luhambo Maintenance System running on http://localhost:8200`);
+  console.log(`SQLite database initialized: ${dbPath}`);
+});
 // --------------- NO app.listen() HERE! ---------------
 module.exports = app;
