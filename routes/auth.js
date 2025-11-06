@@ -70,7 +70,8 @@ router.post('/login', async (req, res) => {
       }
     });
   } catch (error) {
-    res.render('login', { title: 'Login', error: 'An error occurred' });
+    console.error('Login DB error:', err);
+    return res.render('login', { title: 'Login', error: 'Database error' }); 
   }
 });
 
