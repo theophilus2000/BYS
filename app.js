@@ -7,6 +7,9 @@ require('dotenv').config();
 
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -117,9 +120,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(() => {
-  console.log(`Luhambo Maintenance System running on http://localhost:8200`);
-  console.log(`SQLite database initialized: ${dbPath}`);
-});
-// --------------- NO app.listen() HERE! ---------------
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running and listening on port ${PORT}`);
+}); 
+
 module.exports = app;
